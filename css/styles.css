@@ -15,17 +15,16 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  margin: 0;
-}
-
+h6,
 p {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 ul,
 ol {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 0;
   list-style-type: none;
 }
@@ -154,6 +153,7 @@ header .address-menu {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-link:hover,
@@ -176,22 +176,30 @@ header .address-menu {
   letter-spacing: 0.02em;
   color: #434455;
   font-style: normal;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
 .address-link:focus {
   color: #404bbf;
-  font-style: normal;
 }
 
-/* introducing */
-.introducing {
+/* hero */
+.hero {
   background-color: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.introducing .container {
+.hero .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -221,6 +229,7 @@ header .address-menu {
   min-width: 169px;
   height: 56px;
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -228,15 +237,31 @@ header .address-menu {
   background-color: #404bbf;
 }
 
-/* our goals */
+/* goals */
 .goals-list {
   display: flex;
-  gap: 24px;
+  column-gap: 24px;
   justify-content: center;
 }
 
 .goals-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
   width: calc((100% - 72px) / 4);
+}
+
+.icons-goals {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  background: #f4f4fd;
+  padding: 24px 100px;
+}
+
+.goals-item .icon {
+  width: 64px;
+  height: 64px;
 }
 
 .goals-title {
@@ -270,7 +295,7 @@ header .address-menu {
 .team-list {
   display: flex;
   gap: 24px;
-  padding-top: 72px;
+
   justify-content: center;
 }
 
@@ -286,12 +311,39 @@ header .address-menu {
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
+.social {
+  display: flex;
+  flex-direction: row;
+  column-gap: 24px;
+}
+
+.social-link .icon {
+  width: 16px;
+  height: 16px;
+  fill: #f4f4fd;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50% 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: #31d0aa;
+}
+
 .team-title {
   line-height: 1.2;
   font-weight: 500;
   font-size: 20px;
   letter-spacing: 0.02em;
-  margin-bottom: 8px;
 }
 
 .team-items {
@@ -301,7 +353,12 @@ header .address-menu {
 }
 
 .team-inside {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
   padding: 32px 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .team-text {
@@ -327,6 +384,8 @@ header .address-menu {
   width: calc((100% - 48px) / 3);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-inside {
@@ -349,6 +408,45 @@ header .address-menu {
   letter-spacing: 0.02em;
   color: #2e2f42;
   margin-bottom: 8px;
+}
+
+.box-overlay {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 40px;
+
+  transform: translatey(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover .overlay,
+.portfolio-item:focus .overlay {
+  transform: translatey(0);
+}
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.overlay p {
+  font-family: Roboto;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
 }
 
 /* footer */
