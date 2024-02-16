@@ -54,16 +54,17 @@ section {
   max-width: 1440px;
 }
 
+/* ========== header ========== */
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .page-header {
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 2px 1px 0px rgba(46, 47, 66, 0.08);
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
 }
 
 .navigation {
@@ -87,29 +88,6 @@ header .address-menu {
   bottom: -1px;
   left: 0;
   border-radius: 2px;
-}
-
-.goals .container {
-  width: 1440px;
-}
-
-.team .container {
-  width: 1440px;
-}
-
-.goals {
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-}
-
-.team {
-  background-color: #f4f4fd;
-  line-height: 1.11;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-  text-align: center;
-  text-transform: capitalize;
 }
 
 .section-title {
@@ -252,6 +230,16 @@ header .address-menu {
 }
 
 /* ========== our goals ========== */
+.goals .container {
+  width: 1440px;
+}
+
+.goals {
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+}
+
 .goals-list {
   display: flex;
   column-gap: 24px;
@@ -306,6 +294,20 @@ header .address-menu {
 }
 
 /* ========== our team ========== */
+
+.team .container {
+  width: 1440px;
+}
+
+.team {
+  background-color: #f4f4fd;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  text-align: center;
+  text-transform: capitalize;
+}
+
 .team-list {
   display: flex;
   gap: 24px;
